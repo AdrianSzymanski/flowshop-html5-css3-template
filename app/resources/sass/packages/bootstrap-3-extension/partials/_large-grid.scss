@@ -1,0 +1,34 @@
+// Grid system extension
+//
+// Based on Bootstrap v3.3.7: https://github.com/twbs/bootstrap-sass
+
+
+// Container widths
+// Set the large containers widths.
+.container {
+  @media (min-width: $screen-xlg-min) {
+    &--xlg,
+    &--xxlg {
+      width: $container-xlg;
+    }
+  }
+  @media (min-width: $screen-xxlg-min) {
+    &--xxlg {
+      width: $container-xxlg;
+    }
+  }
+}
+
+// Columns
+// Common styles for extra large grid columns.
+@include make-grid-large-columns;
+
+// XL grid
+@media (min-width: $screen-xlg-min) {
+  @include make-grid(xlg);
+}
+
+// XXL grid
+@media (min-width: $screen-xxlg-min) {
+  @include make-grid(xxlg);
+}

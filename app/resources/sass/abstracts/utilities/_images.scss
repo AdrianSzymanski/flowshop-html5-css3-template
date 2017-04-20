@@ -1,0 +1,8 @@
+// Images
+
+
+@mixin imageGlitchFix() {
+	// Fixes image jumping on hover
+	-webkit-backface-visibility: hidden; // webkit fix
+	transform: translate3d(0px,0px,0px); // firefox fix
+}

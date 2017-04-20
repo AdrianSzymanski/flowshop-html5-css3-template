@@ -1,0 +1,134 @@
+.c-connector {
+	$_mod: '.c-connector';
+	
+	@mixin createPipe($_width: 100%, $_height: 100%, $_top: 0, $_left: 0) {
+		position: absolute;
+		top: $_top;
+		left: $_left;
+		@include size($_width, $_height);
+		border-radius: 1rem;
+		padding: $v-cell-padding;
+		background: rgba($c-gray, 0.4);
+		background-clip: content-box;
+	}
+
+	@mixin buildConnector($_kind, $_width, $_height) {
+		$_top: ($_height - 1rem);
+		$_left: ($_width - 1rem);
+
+		@mixin pipeAfter() {
+			content: "";
+			position: absolute;
+			left: $v-cell-padding;
+			@include size((1rem - (2 * $v-cell-padding)));
+			background: $c-white;
+		}
+
+		@if $_kind == 'tl' {
+			#{$_mod}__pipe {
+				@include createPipe(1rem, $_height);
+			}
+			#{$_mod}__pipe + #{$_mod}__pipe {
+				z-index: -1;
+				@include createPipe($_width, 1rem);
+
+				&:after {
+					@include pipeAfter;
+					bottom: $v-cell-padding;
+					@include borderTopRadius(1rem);
+				}
+			}
+		}
+
+		@if $_kind == 'tr' {
+			#{$_mod}__pipe {
+				@include createPipe($_width, 1rem);
+			}
+			#{$_mod}__pipe + #{$_mod}__pipe {
+				@include createPipe(1rem, $_height, 0, $_left);
+				z-index: -1;
+
+				&:after {
+					@include pipeAfter;
+					top: $v-cell-padding;
+					@include borderRightRadius(1rem);
+				}
+			}
+		}
+
+		@if $_kind == 'bl' {
+			#{$_mod}__pipe {
+				@include createPipe(1rem, $_height);
+			}
+			#{$_mod}__pipe + #{$_mod}__pipe {
+				z-index: -1;
+				@include createPipe($_width, 1rem, $_top);
+
+				&:after {
+					@include pipeAfter;
+					bottom: $v-cell-padding;
+					@include borderBottomRadius(1rem);
+				}
+			}
+		}
+
+		@if $_kind == 'br' {
+			#{$_mod}__pipe {
+				@include createPipe($_width, 1rem, $_top, 0);
+			}
+			#{$_mod}__pipe + #{$_mod}__pipe {
+				z-index: -1;
+				@include createPipe(1rem, ($_height), 0, ($_width - 1rem));
+
+				&:after {
+					@include pipeAfter;
+					bottom: $v-cell-padding;
+					@include borderRightRadius(1rem);
+				}
+			}
+		}
+	}
+
+
+
+	// setup
+	position: absolute;
+	z-index: $z-index-connector;
+	// cursor: move;
+
+	span {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	&__pipe {
+		@include createPipe;
+	}
+
+
+
+	// connectors
+	&--h-3 { @include size(3rem, 1rem); }
+	&--h-4 { @include size(4rem, 1rem); }
+	&--h-5 { @include size(5rem, 1rem); }
+
+	&--v-3 { @include size(1rem, 3rem); }
+	&--v-4 { @include size(1rem, 4rem); }
+	&--v-5 { @include size(1rem, 5rem); }
+
+	&--tl-32 { @include buildConnector('tl', 3rem, 2rem); }
+	&--tl-23 { @include buildConnector('tl', 2rem, 3rem); }
+	&--tl-33 { @include buildConnector('tl', 3rem, 3rem); }
+
+	&--tr-32 { @include buildConnector('tr', 3rem, 2rem); }
+	&--tr-23 { @include buildConnector('tr', 2rem, 3rem); }
+	&--tr-33 { @include buildConnector('tr', 3rem, 3rem); }
+
+	&--bl-32 { @include buildConnector('bl', 3rem, 2rem); }
+	&--bl-23 { @include buildConnector('bl', 2rem, 3rem); }
+	&--bl-33 { @include buildConnector('bl', 3rem, 3rem); }
+
+	&--br-32 { @include buildConnector('br', 3rem, 2rem); }
+	&--br-23 { @include buildConnector('br', 2rem, 3rem); }
+	&--br-33 { @include buildConnector('br', 3rem, 3rem); }
+}

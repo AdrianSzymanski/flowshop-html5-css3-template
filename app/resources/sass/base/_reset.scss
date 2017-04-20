@@ -1,0 +1,38 @@
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+}
+
+a {
+	transition: all 0.25s ease 0.1s;
+	color: inherit;
+	outline: none;
+	box-shadow: none;
+
+	&, &:hover, &:focus {
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
+
+button {
+	border: none;
+	outline: none;
+	box-shadow: none;
+	cursor: pointer;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+img { max-width: 100%; }
+
+input, textarea, select {
+	display: block;
+	width: 100%;
+	outline: none;
+	box-shadow: none;
+}

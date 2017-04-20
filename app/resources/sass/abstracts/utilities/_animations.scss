@@ -1,0 +1,67 @@
+// Animations and keyframes
+
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin multipleAnimations($list...) {
+    $animations: '';
+
+    @for $i from 1 through length($list) {
+        $animations: $animations + nth($list, $i);
+
+        @if $i < length($list) {
+            $animations: $animations + ', ';
+        }
+    }
+    -webkit-animation: unquote($animations);
+    -moz-animation:    unquote($animations);
+    -o-animation:      unquote($animations);
+    animation:         unquote($animations);
+}
+
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+       -o-animation: $animation;
+          animation: $animation;
+}
+@mixin animationName($name) {
+  -webkit-animation-name: $name;
+          animation-name: $name;
+}
+@mixin animationDuration($duration) {
+  -webkit-animation-duration: $duration;
+          animation-duration: $duration;
+}
+@mixin animationTimingFunction($timing-function) {
+  -webkit-animation-timing-function: $timing-function;
+          animation-timing-function: $timing-function;
+}
+@mixin animationDelay($delay) {
+  -webkit-animation-delay: $delay;
+          animation-delay: $delay;
+}
+@mixin animationIterationCount($iteration-count) {
+  -webkit-animation-iteration-count: $iteration-count;
+          animation-iteration-count: $iteration-count;
+}
+@mixin animationDirection($direction) {
+  -webkit-animation-direction: $direction;
+          animation-direction: $direction;
+}
+@mixin animationFillMode($fill-mode) {
+  -webkit-animation-fill-mode: $fill-mode;
+          animation-fill-mode: $fill-mode;
+}

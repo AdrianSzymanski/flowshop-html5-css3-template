@@ -1,0 +1,200 @@
+.c-machine {
+	$_mod: '.c-machine';
+	$_anim-size: 3px; // animation width
+
+	@mixin createTitle($_offset: 0) {
+		#{$_mod}__title {
+			position: absolute;
+			top: -1em;
+			left: $_offset;
+			@include f(0.5rem, $c-black, 500, 1em, uppercase);
+			white-space: nowrap;
+			user-select: none;
+			cursor: default;
+		}
+	}
+
+	@mixin createInput($_machine-number, $_bg) {
+		@at-root {
+			#{$_mod}__input--#{$_machine-number} {
+				background: $_bg;
+			}
+		}
+	}
+
+	@mixin createOutput($_machine-number, $_bg) {
+		@at-root {
+			#{$_mod}__output--#{$_machine-number} {
+				background: $_bg;
+			}
+		}
+	}
+
+	@mixin createProduct($_machine-number, $_bg) {
+		@at-root {
+			#{$_mod}__product--#{$_machine-number} {
+
+				background: $_bg;
+			}
+		}
+	}
+
+	@mixin createAnimation($_machine-number, $_width, $_height) {
+		// calculate pseudoelements' rotation angle
+		$_w: stripUnit($_anim-size);
+		$_final-width: ((stripUnit($_width) * stripUnit($v-cell-size)) + (2 * $_w)); // (machine + animation) width
+		$_final-height: ((stripUnit($_height) * stripUnit($v-cell-size)) + (2 * $_w)); // (machine + animation) height
+		$_tangens: ($_final-width / $_final-height);
+		$_angle: atan($_tangens);
+
+		#{$_mod}__animation--#{$_machine-number} {
+			&:before, &:after {
+				@include rotate(-$_angle);
+				// pseudoelement height [ (a*b/c)*1px) ]
+				padding-left: ceil($_final-width * $_final-height)/(sqrt($_final-width * $_final-width + $_final-height * $_final-height) ) * 1px;
+			}
+
+			@for $i from 1 through 10 {
+				$_i-half: ($i / 2);
+
+				&.is-animated-#{$i}:before {
+					@include animation(grow #{$_i-half}s linear infinite);
+				}
+				&.is-animated-#{$i}:after {
+					@include animation(grow #{$_i-half}s linear infinite);
+					@include animationDelay(#{$_i-half}s);
+				}
+
+			}
+		}
+	}	
+
+	@mixin createConnectionPoint($_symbol) {
+		@include size(100%);
+		padding: $v-cell-padding;
+
+		span {
+			$_font-size: (1rem - (2 * $v-cell-padding));
+
+			transition: all .25s ease .1s;
+			position: relative;
+			@include size(100%);
+			border-radius: 50%;
+			font-family: "Ek Mukta";
+			@include f($_font-size, $c-white, 700, $_font-size);
+			text-align: center;
+			background: $c-black;
+
+			&:after {
+				content: $_symbol;
+				position: absolute;
+				top: 0;
+				left: 0;
+				@include size(100%);
+			}
+		}
+
+		&.is-connected span {
+			background: $c-white;
+			color: $c-black;
+		}
+	}
+
+	@mixin buildMachine($_machine-number, $_width, $_height, $_bg: transparent, $_title-offset: 0) {
+		@include size($_width, $_height);
+		@include createTitle($_title-offset);
+		@include createInput($_machine-number, $_bg);
+		@include createOutput($_machine-number, $_bg);
+		@include createProduct($_machine-number, $_bg);
+		@include createAnimation($_machine-number, $_width, $_height);
+	}
+
+
+
+	// setup
+	position: absolute;
+	z-index: $z-index-machine;
+	display: inline-block;
+
+	span {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	&__body {
+		font-size: 0;
+		@include clearfix;
+	}
+
+	&__animation {
+		position: relative;
+		margin: -$_anim-size;
+		padding: $_anim-size;
+		// overflow: hidden;
+
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			// z-index: -1;
+			@include size(0);
+			background: rgba($c-black,.8);
+		}
+		&:before {
+			// top-left corner
+			top: 0;
+			left: 0;
+			@include transformOrigin(0 0);
+		}
+		&:after {
+			// bottom-right corner
+			bottom: 0;
+			right: 0;
+			@include transformOrigin(100% 100%);
+		}
+	}
+
+	&__unit {
+		@include size(1rem);
+		outline: 1px solid $c-border;
+		background: lighten($c-blue,20%);
+	}
+
+	&__input {
+		@include createConnectionPoint("-");
+	}
+
+	&__output {
+		@include createConnectionPoint("+");
+	}
+
+	&__product {
+
+	}
+
+
+
+	// machines
+	&--1 {
+		@include buildMachine(1, 2rem, 2rem, $c-asphalt);
+	}
+
+	&--2 {
+		@include buildMachine(2, 5rem, 3rem, $c-green, 2rem);
+	}
+
+	&--3 {
+		@include buildMachine(3, 2rem, 2rem, $c-orange);
+	}
+
+	&--4 {
+		@include buildMachine(4, 2rem, 2rem, $c-red);
+	}
+
+	&--5 {
+		@include buildMachine(5, 5rem, 3rem, $c-purple, 2rem);
+	}
+
+	&--6 {
+		@include buildMachine(6, 3rem, 5rem);
+	}
+}

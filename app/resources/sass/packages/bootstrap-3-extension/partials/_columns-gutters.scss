@@ -1,0 +1,34 @@
+// Bootstrap 3 column gutters extension
+//
+// Example:
+// <div class="row">
+//    <div class="col-md-6 col-md-del-right">
+//       <div class="inside"></div>
+//    </div>
+//    <div class="col-md-6 col-md-del-left">
+//       <div class="inside"></div>
+//    </div>
+// </div>
+
+
+@include delete-column-gutters(xs);
+
+@media (min-width: $screen-sm-min) {
+	@include delete-column-gutters(sm);
+}
+
+@media (min-width: $screen-md-min) {
+	@include delete-column-gutters(md);
+}
+
+@media (min-width: $screen-lg-min) {
+	@include delete-column-gutters(lg);
+}
+
+@media (min-width: $screen-xlg-min) {
+	@include delete-column-gutters(xlg);
+}
+
+@media (min-width: $screen-xxlg-min) {
+	@include delete-column-gutters(xxlg);
+}

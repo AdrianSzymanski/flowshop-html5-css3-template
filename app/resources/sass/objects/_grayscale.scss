@@ -1,0 +1,16 @@
+.o-grayscale {
+  transition: all 0.3s ease 0.1s;
+  filter: gray; /* IE 6-9 */
+  filter: grayscale(100%);
+  @include imageGlitchFix;
+  
+  &:hover {
+    filter: none;
+  }
+}
+
+.o-grayscale-static {
+  filter: gray; /* IE 6-9 */
+  filter: grayscale(100%);
+  @include imageGlitchFix;
+}

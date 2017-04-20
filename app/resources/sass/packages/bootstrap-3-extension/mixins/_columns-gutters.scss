@@ -1,0 +1,9 @@
+// Bootstrap 3 column gutters extension
+
+
+// Delete column gutters.
+@mixin delete-column-gutters($class) {
+  .col-#{$class}-del-left { padding-left: 0; }
+  .col-#{$class}-del-right { padding-right: 0; }
+  .col-#{$class}-del-both { padding-left: 0; padding-right: 0; }
+}

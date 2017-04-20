@@ -1,0 +1,19 @@
+// Single side border-radius
+
+
+@mixin borderTopRadius($radius) {
+  border-top-right-radius: $radius;
+   border-top-left-radius: $radius;
+}
+@mixin borderRightRadius($radius) {
+  border-bottom-right-radius: $radius;
+     border-top-right-radius: $radius;
+}
+@mixin borderBottomRadius($radius) {
+  border-bottom-right-radius: $radius;
+   border-bottom-left-radius: $radius;
+}
+@mixin borderLeftRadius($radius) {
+  border-bottom-left-radius: $radius;
+     border-top-left-radius: $radius;
+}

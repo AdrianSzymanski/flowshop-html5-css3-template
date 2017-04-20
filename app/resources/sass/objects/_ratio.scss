@@ -1,0 +1,23 @@
+.o-ratio {
+  position: relative;
+  height: 0;
+
+  &__16by9 {
+    padding-bottom: percentage(9/16);
+  }
+
+  &__16by10 {
+    padding-bottom: percentage(10/16);
+  }
+
+  &__4by3 {
+    padding-bottom: percentage(3/4);
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include size(100%);
+  }
+}

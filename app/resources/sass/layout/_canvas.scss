@@ -1,0 +1,54 @@
+.app-canvas {
+	$_width: ($v-cell-size*$v-grid-cols);
+	$_height: ($v-cell-size*$v-grid-rows);
+
+	position: absolute;
+	top: calc(50% - #{$_height/2});
+	left: calc(50% - #{$_width/2});
+	@include size($_width, $_height);
+	border: 1px solid $c-border;
+	background: $c-white;
+	overflow: hidden;
+
+	&__main {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		@include size(100%);
+	}
+
+	&__grid {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		@include size(100%);
+	}
+
+	&__grid-v-item {
+		position: absolute;
+		@include size(1px, 100%);
+		background: $c-border;
+		top: 0;
+		left: -2px;
+
+		@for $i from 1 to $v-grid-cols {
+			&:nth-of-type(#{$i}) { left: floor($v-cell-size*$i); }
+		}	}
+
+	&__grid-h-item {
+		position: absolute;
+		@include size(100%,1px);
+		background: $c-border;
+		left: 0;
+		top: -2px;
+
+		@for $j from 1 to $v-grid-rows {
+			&:nth-of-type(#{$j}) {
+				top: floor($v-cell-size*$j);
+			}
+		}
+	}
+
+}
