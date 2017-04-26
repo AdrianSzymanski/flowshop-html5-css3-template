@@ -105,6 +105,18 @@
 		@include createPipe;
 	}
 
+	&__unit-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include size(100%);
+		font-size: 0;
+
+		span {
+			@include size(1rem);
+		}
+	}
+
 
 
 	// connectors

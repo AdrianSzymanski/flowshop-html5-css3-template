@@ -1,3 +1,14 @@
+// config
+// --------------------------------------------------
+
+	$v-cell-size: 30px;	// single grid cell size (1rem), must be in pixels
+	$v-cell-padding: 0.3rem;
+
+	$v-grid-rows: 20;
+	$v-grid-cols: 42;
+
+	$v-animation-max-time: 100;
+
 
 // colors
 // --------------------------------------------------
@@ -28,18 +39,6 @@
 	$c-canvas: $c-white;
 
 
-// config
-// --------------------------------------------------
-
-	$v-cell-size: 30px;	// single grid cell size (1rem), must be in pixels
-	$v-cell-padding: 0.3rem;
-
-	$v-grid-rows: 20;
-	$v-grid-cols: 42;
-
-	$v-animation-max-time: 100;
-
-
 // media queries
 // --------------------------------------------------
 
@@ -55,3 +54,4 @@
 
 	$z-index-machine: 1;
 	$z-index-connector: 2;
+

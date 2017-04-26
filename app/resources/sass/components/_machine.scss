@@ -35,8 +35,10 @@
 	@mixin createProduct($_machine-number, $_bg) {
 		@at-root {
 			#{$_mod}__product--#{$_machine-number} {
-
-				background: $_bg;
+				&:after {
+					background: $_bg;
+					outline: 1px solid darken($_bg, 25%);
+				}
 			}
 		}
 	}
@@ -187,7 +189,18 @@
 	}
 
 	&__product {
+		position: relative;
+		display: inline-block;
+		@include size(100%);
 
+		&:after {
+			content: "";
+			position: absolute;
+			top: $v-cell-padding;
+			left: $v-cell-padding;
+			@include size((1rem - 2*$v-cell-padding));
+			@include rotate(45deg);
+		}
 	}
 
 
