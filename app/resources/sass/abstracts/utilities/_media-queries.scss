@@ -2,7 +2,7 @@
 
 
 @mixin mq($size) {
-	@media (max-width: #{$size}) {
-		@content;
-	}	
+  @media (max-width: #{$size}) {
+    @content;
+  }
 }

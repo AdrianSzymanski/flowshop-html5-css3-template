@@ -1,57 +1,57 @@
 // config
 // --------------------------------------------------
 
-	$v-cell-size: 30px;	// single grid cell size (1rem), must be in pixels
-	$v-cell-padding: 0.3rem;
+$v-cell-size: 30px;	// single grid cell size (1rem), must be in pixels
+$v-cell-padding: 0.3rem;
 
-	$v-grid-rows: 20;
-	$v-grid-cols: 42;
+$v-grid-rows: 20;
+$v-grid-cols: 42;
 
-	$v-animation-max-time: 100;
+$v-animation-max-time: 100;
 
 
 // colors
 // --------------------------------------------------
-	
-	$c-success: hsl(145, 63%, 40%);
-	$c-danger:	hsl(356, 100%, 41%);
-	$c-warning: hsl(32, 97%, 46%);
-	$c-info:    hsl(225, 46, 42%);
-	
-	$c-font: #3e3e3e; // default font color
-	$c-theme: #3a539b;
-	$c-border: #cbcbcb;
 
-	$c-white: #fff;
-	$c-white-dark: #f7f7f7;
-	$c-gray-light: #c0c0c0;
-	$c-gray: #808080;
-	$c-black: #000;
+$c-success: hsl(145, 63%, 40%);
+$c-danger:  hsl(356, 100%, 41%);
+$c-warning: hsl(32, 97%, 46%);
+$c-info:    hsl(225, 46, 42%);
 
-	$c-orange: #f39c12;
-	$c-red: #e74c3c;
-	$c-green: #2ecc71;
-	$c-blue: #2980b9;
-	$c-blue-dark: #34495e;
-	$c-purple: #8e44ad;
-	$c-asphalt: #34495e;
+$c-font: #3e3e3e; // default font color
+$c-theme: #3a539b;
+$c-border: #cbcbcb;
 
-	$c-canvas: $c-white;
+$c-white: #fff;
+$c-white-dark: #f7f7f7;
+$c-gray-light: #c0c0c0;
+$c-gray: #808080;
+$c-black: #000;
+
+$c-orange: #f39c12;
+$c-red: #e74c3c;
+$c-green: #2ecc71;
+$c-blue: #2980b9;
+$c-blue-dark: #34495e;
+$c-purple: #8e44ad;
+$c-asphalt: #34495e;
+
+$c-canvas: $c-white;
 
 
 // media queries
 // --------------------------------------------------
 
-	$screen-xxlg: 1799px;
-	$screen-xlg: 	1499px;
-	$screen-lg: 	1199px;
-	$screen-md: 	992px;
-	$screen-sm: 	767px;
+$screen-xxlg: 1799px;
+$screen-xlg:  1499px;
+$screen-lg:   1199px;
+$screen-md:   992px;
+$screen-sm:   767px;
 
 
 // z-index
 // --------------------------------------------------
 
-	$z-index-machine: 1;
-	$z-index-connector: 2;
+$z-index-machine: 1;
+$z-index-connector: 2;
 

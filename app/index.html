@@ -1,272 +1,262 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="csrf-token" content="{{ csrf_token() }}" />
-
-	<title>HTML5+CSS3 app template</title>
-
-	<link href="build/css/master.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5+CSS3 app template</title>
+  <link href="//fonts.googleapis.com/css?family=Teko:300,400,500,600,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="build/css/master.css" rel="stylesheet">
 </head>
 <body>
-	<div class="app-canvas">
-		<div class="app-canvas__main">
+  <div class="app-canvas">
+    <div class="app-canvas__main">
 
-			<!-- machines -->
-				<div class="c-machine c-machine--1" style="top:1em; left:1em;">
-					<p class="c-machine__title">Dz w ramy</p>
-					<div class="c-machine__body">
-						<div class="c-machine__anim-wrapper is-animated-4"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+        <!-- machines -->
+        <div class="c-machine c-machine--1" style="top:1em; left:1em;">
+          <p class="c-machine__title">Dz w ramy</p>
+          <div class="c-machine__body">
+            <div class="c-machine__anim-wrapper is-animated-4"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+            <div class="c-machine__unit-wrapper">
+              <span class="c-machine__unit"><span class="c-machine__product c-machine__product--1"></span></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--1"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--1 is-connected"><span></span></span></span>
+            </div>
+          </div>
+        </div>
 
-						<div class="c-machine__unit-wrapper">
-							<span class="c-machine__unit"><span class="c-machine__product c-machine__product--1"></span></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--1"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--1 is-connected"><span></span></span></span>
-						</div>
-					</div>
-				</div>
+        <div class="c-machine c-machine--2" style="top:4em; left:4em;">
+          <p class="c-machine__title">Montażownia</p>
+          <div class="c-machine__body">
+            <div class="c-machine__anim-wrapper is-animated-8"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+            <div class="c-machine__unit-wrapper">
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--1 is-connected"><span></span></span></span>
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--1"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--2"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__product c-machine__product--1"></span></span>
+              <span class="c-machine__unit"><span class="c-machine__product c-machine__product--3"></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--2"><span></span></span></span>
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--3 is-connected"><span></span></span></span>
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--3"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__product c-machine__product--2"></span></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--2 is-connected"><span></span></span></span>
+            </div>
+          </div>
+        </div>
 
-				<div class="c-machine c-machine--2" style="top:4em; left:4em;">
-					<p class="c-machine__title">Montażownia</p>
-					<div class="c-machine__body">
-						<div class="c-machine__anim-wrapper is-animated-8"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+        <div class="c-machine c-machine--3" style="top:8em; left:1em;">
+          <p class="c-machine__title">Dz w oparcia</p>
+          <div class="c-machine__body">
+            <div class="c-machine__anim-wrapper is-animated-6"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+            <div class="c-machine__unit-wrapper">
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--3 is-connected"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--3"><span></span></span></span>
+            </div>
+          </div>
+        </div>
 
-						<div class="c-machine__unit-wrapper">
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--1 is-connected"><span></span></span></span>
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--1"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--2"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__product c-machine__product--1"></span></span>
-							<span class="c-machine__unit"><span class="c-machine__product c-machine__product--3"></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--2"><span></span></span></span>
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--3 is-connected"><span></span></span></span>
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--3"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__product c-machine__product--2"></span></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--2 is-connected"><span></span></span></span>
-						</div>
-					</div>
-				</div>
+        <div class="c-machine c-machine--4" style="top:8em; left:7em;">
+          <p class="c-machine__title">Dz w farbę</p>
+          <div class="c-machine__body">
+            <div class="c-machine__anim-wrapper"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+            <div class="c-machine__unit-wrapper">
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--4 is-connected"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--4"><span></span></span></span>
+            </div>
+          </div>
+        </div>
 
-				<div class="c-machine c-machine--3" style="top:8em; left:1em;">
-					<p class="c-machine__title">Dz w oparcia</p>
-					<div class="c-machine__body">
-						<div class="c-machine__anim-wrapper is-animated-6"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+        <div class="c-machine c-machine--5" style="top:6em; left:12em;">
+          <p class="c-machine__title">Lakiernia</p>
+          <div class="c-machine__body">
+            <div class="c-machine__anim-wrapper"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+            <div class="c-machine__unit-wrapper">
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--2 is-connected"><span></span></span></span>
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--2"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--5"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--5 is-connected"><span></span></span></span>
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--4 is-connected"><span></span></span></span>
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--4"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__output c-machine__output--5"><span></span></span></span>
+            </div>
+          </div>
+        </div>
 
-						<div class="c-machine__unit-wrapper">
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--3 is-connected"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--3"><span></span></span></span>
-						</div>
-					</div>
-				</div>
+        <div class="c-machine c-machine--6" style="top:5em; left:19em;">
+          <p class="c-machine__title">Dział sprzedaży</p>
+          <div class="c-machine__body">
+            <div class="c-machine__anim-wrapper"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+            <div class="c-machine__unit-wrapper">
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__product c-machine__product--5"></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--5"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--5 is-connected"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"><span class="c-machine__input c-machine__input--5"><span></span></span></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+              <span class="c-machine__unit"></span>
+            </div>
+          </div>
+        </div>
 
-				<div class="c-machine c-machine--4" style="top:8em; left:7em;">
-					<p class="c-machine__title">Dz w farbę</p>
-					<div class="c-machine__body">
-						<div class="c-machine__anim-wrapper"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+      <!-- connectors -->
+        <div class="c-connector c-connector--tr-33" style="top:2rem; left:2rem;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+          <span class="c-machine__product c-machine__product--1" style="top:0; left:1rem;"></span>
+        </div>
 
-						<div class="c-machine__unit-wrapper">
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--4 is-connected"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--4"><span></span></span></span>
-						</div>
-					</div>
-				</div>
+        <div class="c-connector c-connector--br-33" style="top:6rem; left:2rem;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
 
-				<div class="c-machine c-machine--5" style="top:6em; left:12em;">
-					<p class="c-machine__title">Lakiernia</p>
-					<div class="c-machine__body">
-						<div class="c-machine__anim-wrapper"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
+        <div class="c-connector c-connector--h-5" style="top:6em; left:8em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-machine__product c-machine__product--2" style="top:0; left:2rem;"></span>
+        </div>
 
-						<div class="c-machine__unit-wrapper">
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--2 is-connected"><span></span></span></span>
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--2"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--5"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--5 is-connected"><span></span></span></span>
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--4 is-connected"><span></span></span></span>
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--4"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__output c-machine__output--5"><span></span></span></span>
-						</div>
-					</div>
-				</div>
+        <div class="c-connector c-connector--h-5" style="top:8em; left:8em;">
+          <span class="c-connector__pipe"></span>
+        </div>
 
-				<div class="c-machine c-machine--6" style="top:5em; left:19em;">
-					<p class="c-machine__title">Dział sprzedaży</p>
-					<div class="c-machine__body">
-						<div class="c-machine__anim-wrapper"><div class="spinner pie"></div><div class="filler pie"></div><div class="mask"></div></div>
-
-						<div class="c-machine__unit-wrapper">
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__product c-machine__product--5"></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--5"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--5 is-connected"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"><span class="c-machine__input c-machine__input--5"><span></span></span></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-							<span class="c-machine__unit"></span>
-						</div>
-					</div>
-				</div>
-				
-			<!-- connectors -->
-				<div class="c-connector c-connector--tr-33" style="top:2rem; left:2rem;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-
-					<span class="c-machine__product c-machine__product--1" style="top:0; left:1rem;"></span>
-				</div>
-
-				<div class="c-connector c-connector--br-33" style="top:6rem; left:2rem;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
-
-				<div class="c-connector c-connector--h-5" style="top:6em; left:8em;">
-					<span class="c-connector__pipe"></span>
-
-					<span class="c-machine__product c-machine__product--2" style="top:0; left:2rem;"></span>
-				</div>
-
-				<div class="c-connector c-connector--h-5" style="top:8em; left:8em;">
-					<span class="c-connector__pipe"></span>
-				</div>
-
-				<div class="c-connector c-connector--h-4" style="top:7em; left:16em;">
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--h-4" style="top:7em; left:16em;">
+          <span class="c-connector__pipe"></span>
+        </div>
 
 
 
-			<!-- connector types -->
-				<div class="c-connector c-connector--h-3" style="top:1em; left:31em;">
-					<span class="c-connector__pipe"></span>
-				</div>
+      <!-- connector types -->
+        <div class="c-connector c-connector--h-3" style="top:1em; left:31em;">
+          <span class="c-connector__pipe"></span>
+        </div>
 
-				<div class="c-connector c-connector--h-4" style="top:2em; left:31em;">
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--h-4" style="top:2em; left:31em;">
+          <span class="c-connector__pipe"></span>
+        </div>
 
-				<div class="c-connector c-connector--h-5" style="top:3em; left:31em;">
-					<span class="c-connector__pipe"></span>
-				</div>
-
-
-				<div class="c-connector c-connector--v-3" style="top:1em; left:37em;">
-					<span class="c-connector__pipe"></span>
-				</div>
-
-				<div class="c-connector c-connector--v-4" style="top:1em; left:38em;">
-					<span class="c-connector__pipe"></span>
-				</div>
-
-				<div class="c-connector c-connector--v-5" style="top:1em; left:39em;">
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--h-5" style="top:3em; left:31em;">
+          <span class="c-connector__pipe"></span>
+        </div>
 
 
-				<div class="c-connector c-connector--tr-32" style="top:6em; left:31em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--v-3" style="top:1em; left:37em;">
+          <span class="c-connector__pipe"></span>
+        </div>
 
-				<div class="c-connector c-connector--tr-23" style="top:7em; left:31em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--v-4" style="top:1em; left:38em;">
+          <span class="c-connector__pipe"></span>
+        </div>
 
-				<div class="c-connector c-connector--tr-33" style="top:5em; left:32em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--v-5" style="top:1em; left:39em;">
+          <span class="c-connector__pipe"></span>
+        </div>
 
 
-				<div class="c-connector c-connector--tl-32" style="top:13em; left:33em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--tr-32" style="top:6em; left:31em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
 
-				<div class="c-connector c-connector--tl-23" style="top:12em; left:32em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--tr-23" style="top:7em; left:31em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
 
-				<div class="c-connector c-connector--tl-33" style="top:11em; left:31em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
-
-
-				<div class="c-connector c-connector--br-32" style="top:7em; left:36em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
-
-				<div class="c-connector c-connector--br-23" style="top:7em; left:38em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
-				
-				<div class="c-connector c-connector--br-33" style="top:8em; left:38em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--tr-33" style="top:5em; left:32em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
 
 
-				<div class="c-connector c-connector--bl-32" style="top:12em; left:39em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--tl-32" style="top:13em; left:33em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
 
-				<div class="c-connector c-connector--bl-23" style="top:12em; left:38em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
-				
-				<div class="c-connector c-connector--bl-33" style="top:13em; left:37em;">
-					<span class="c-connector__pipe"></span>
-					<span class="c-connector__pipe"></span>
-				</div>
+        <div class="c-connector c-connector--tl-23" style="top:12em; left:32em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
 
-		</div>
-		<div class="app-canvas__grid">
-			<div class="app-canvas__grid-v">
-				<span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
-				<span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
-				<span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
-				<span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
-				<span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
-			</div>
-			<div class="app-canvas__grid-h">
-				<span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
-				<span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
-				<span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
-				<span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
-				<span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
-			</div>
-		</div>
-	</div>
+        <div class="c-connector c-connector--tl-33" style="top:11em; left:31em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
+
+
+        <div class="c-connector c-connector--br-32" style="top:7em; left:36em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
+
+        <div class="c-connector c-connector--br-23" style="top:7em; left:38em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
+
+        <div class="c-connector c-connector--br-33" style="top:8em; left:38em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
+
+
+        <div class="c-connector c-connector--bl-32" style="top:12em; left:39em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
+
+        <div class="c-connector c-connector--bl-23" style="top:12em; left:38em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
+
+        <div class="c-connector c-connector--bl-33" style="top:13em; left:37em;">
+          <span class="c-connector__pipe"></span>
+          <span class="c-connector__pipe"></span>
+        </div>
+
+    </div>
+    <div class="app-canvas__grid">
+      <div class="app-canvas__grid-v">
+        <span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
+        <span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
+        <span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
+        <span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
+        <span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span><span class="app-canvas__grid-v-item"></span>
+      </div>
+      <div class="app-canvas__grid-h">
+        <span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
+        <span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
+        <span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
+        <span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
+        <span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span><span class="app-canvas__grid-h-item"></span>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

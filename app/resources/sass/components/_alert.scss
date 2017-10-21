@@ -1,49 +1,49 @@
 .c-alert {
-	$_button-width: 24px;
-	$color-map: (
-	  success: $c-success,
-	  danger: $c-danger,
-	  warning: $c-warning,
-	  info: $c-info
-	);
+  $_button-width: 24px;
+  $color-map: (
+    success: $c-success,
+    danger: $c-danger,
+    warning: $c-warning,
+    info: $c-info
+  );
 
-	transition: opacity .5s ease .1s, visibility .5s ease .1s, max-height .3s ease .5s;
-	max-height: 200px;	// for transition
-	overflow: hidden;
+  transition: opacity .5s ease .1s, visibility .5s ease .1s, max-height .3s ease .5s;
+  max-height: 200px;  // for transition
+  overflow: hidden;
 
-	&.is-closed {
-		opacity: 0;
-		visibility: hidden;
-		max-height: 0;
-	}
+  &.is-closed {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+  }
 
-	&__inner {
-		position: relative;
-		padding: 15px (15px+$_button-width) 12px 15px;
-		border: 0;
-		border-radius: 2px;
-		margin: 0 0 15px;
-		@include f(14px, $c-white, 400);
+  &__inner {
+    position: relative;
+    padding: 15px (15px+$_button-width) 12px 15px;
+    border: 0;
+    border-radius: 2px;
+    margin: 0 0 15px;
+    @include f(14px, $c-white, 400);
 
-		@each $name, $value in $color-map {
-		  &--#{$name} {
-				background: $value;
-				border-bottom: 1px solid darken($value, 7%);
-		  }
-		}
-	}
+    @each $name, $value in $color-map {
+      &--#{$name} {
+        background: $value;
+        border-bottom: 1px solid darken($value, 7%);
+      }
+    }
+  }
 
-	&__button {
-		transition: all .25s ease;
-		position: absolute;
-		top: calc(50% - 12px);
-		right: 15px;
-		@include size($_button-width);
-		@include f(24px, $c-white, 300, 26px);
-		background: transparent;
+  &__button {
+    transition: all .25s ease;
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 15px;
+    @include size($_button-width);
+    @include f(24px, $c-white, 300, 26px);
+    background: transparent;
 
-		&:hover, &:focus {
-			background: rgba($c-white, 0.05);
-		}
-	}
+    &:hover, &:focus {
+      background: rgba($c-white, 0.05);
+    }
+  }
 }

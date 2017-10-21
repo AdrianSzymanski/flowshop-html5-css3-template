@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var del = require('del');
 var sass = require('gulp-sass');
-var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 var runSequence = require('run-sequence');
 
@@ -19,21 +18,6 @@ gulp.task('sass', function() {
       stream: true
     }))
 });
-  
-/*
-  gulp.task('scripts', function() {
-  	var path = 'app/resources/js/';
-
-    return gulp.src(
-      [
-        path+'jquery/jquery-2.1.1.js',
-        path+'jquery-ui/jquery-ui.min.js',
-        path+'master.js'
-      ])
-      .pipe(concat('master.min.js'))
-      .pipe(gulp.dest('app/build/js'));
-  });
-*/
 
 gulp.task('browserSync', function() {
   browserSync.init({

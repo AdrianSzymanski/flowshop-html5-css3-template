@@ -1,19 +1,19 @@
-.c-btn { 
-	outline: none;
-	box-shadow: none;
-	transition: all 0.25s ease;
-	display: inline-block; 
-	min-width: 165px;
-	margin: 0 0 15px;
-	border: none;
-	padding: 0 15px;
-	cursor: pointer;
-	@include f(15px, $c-white, 400, 30px, uppercase);
-	text-align: center;
-	background: $c-theme;
+.c-btn {
+  outline: none;
+  box-shadow: none;
+  transition: all 0.25s ease;
+  display: inline-block;
+  min-width: 165px;
+  margin: 0 0 15px;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  @include f(15px, $c-white, 400, 30px, uppercase);
+  text-align: center;
+  background: $c-theme;
 
-	&:hover, &:focus {
-		color: $c-white;
-		background: lighten($c-theme, 7%);
-	}
+  &:hover, &:focus {
+    color: $c-white;
+    background: lighten($c-theme, 7%);
+  }
 }

@@ -1,232 +1,232 @@
 .c-machine {
-	$_mod: '.c-machine';
-	$_anim-size: 3px; // animation width
-	$_z-index-anim: 1;
-	$_z-index-units: 2;
+  $_mod: '.c-machine';
+  $_anim-size: 3px; // animation width
+  $_z-index-anim: 1;
+  $_z-index-units: 2;
 
-	@mixin createTitle($_offset: 0) {
-		#{$_mod}__title {
-			position: absolute;
-			top: -1em;
-			left: $_offset;
-			@include f(0.5rem, $c-black, 500, 1em, uppercase);
-			white-space: nowrap;
-			user-select: none;
-			cursor: default;
-		}
-	}
+  @mixin createTitle($_offset: 0) {
+    #{$_mod}__title {
+      position: absolute;
+      top: -1em;
+      left: $_offset;
+      @include f(0.5rem, $c-black, 500, 1em, uppercase);
+      white-space: nowrap;
+      user-select: none;
+      cursor: default;
+    }
+  }
 
-	@mixin createInput($_machine-number, $_bg) {
-		@at-root {
-			#{$_mod}__input--#{$_machine-number} {
-				background: $_bg;
-			}
-		}
-	}
+  @mixin createInput($_machine-number, $_bg) {
+    @at-root {
+      #{$_mod}__input--#{$_machine-number} {
+        background: $_bg;
+      }
+    }
+  }
 
-	@mixin createOutput($_machine-number, $_bg) {
-		@at-root {
-			#{$_mod}__output--#{$_machine-number} {
-				background: $_bg;
-			}
-		}
-	}
+  @mixin createOutput($_machine-number, $_bg) {
+    @at-root {
+      #{$_mod}__output--#{$_machine-number} {
+        background: $_bg;
+      }
+    }
+  }
 
-	@mixin createProduct($_machine-number, $_bg) {
-		@at-root {
-			#{$_mod}__product--#{$_machine-number} {
-				&:after {
-					background: $_bg;
-					outline: 1px solid darken($_bg, 25%);
-				}
-			}
-		}
-	}
+  @mixin createProduct($_machine-number, $_bg) {
+    @at-root {
+      #{$_mod}__product--#{$_machine-number} {
+        &:after {
+          background: $_bg;
+          outline: 1px solid darken($_bg, 25%);
+        }
+      }
+    }
+  }
 
-	@mixin createAnimation($_width, $_height, $_bg) {
-		// based on Hugo Giraudel's pie timer: http://codepen.io/HugoGiraudel/pen/BHEwo
+  @mixin createAnimation($_width, $_height, $_bg) {
+    // based on Hugo Giraudel's pie timer: http://codepen.io/HugoGiraudel/pen/BHEwo
 
-		// calculate wrapper's rotation angle
-		$_w: ((stripUnit($_width) * stripUnit($v-cell-size)) + (2 * stripUnit($_anim-size)) + 2) * (1 / stripUnit($v-cell-size)) * 1rem; // (machine width + animation width + some reserve) converted to rem
-		$_h: ((stripUnit($_height) * stripUnit($v-cell-size)) + (2 * stripUnit($_anim-size)) + 2) * (1 / stripUnit($v-cell-size)) * 1rem; // (machine height + animation height + some reserve) converted to rem
-		$_tangens: ($_w / $_h);
-		$_angle: atan($_tangens);
-		// get greater dimension so that the wrapper is square
-		$_s: max($_w, $_h);
-		// scale the wrapper so that the machine is inscribed in animation circle
-		$_factor: sqrt(2);
-		// calculate final size
-		$_size: ($_s * $_factor);
+    // calculate wrapper's rotation angle
+    $_w: ((stripUnit($_width) * stripUnit($v-cell-size)) + (2 * stripUnit($_anim-size)) + 2) * (1 / stripUnit($v-cell-size)) * 1rem; // (machine width + animation width + some reserve) converted to rem
+    $_h: ((stripUnit($_height) * stripUnit($v-cell-size)) + (2 * stripUnit($_anim-size)) + 2) * (1 / stripUnit($v-cell-size)) * 1rem; // (machine height + animation height + some reserve) converted to rem
+    $_tangens: ($_w / $_h);
+    $_angle: atan($_tangens);
+    // get greater dimension so that the wrapper is square
+    $_s: max($_w, $_h);
+    // scale the wrapper so that the machine is inscribed in animation circle
+    $_factor: sqrt(2);
+    // calculate final size
+    $_size: ($_s * $_factor);
 
-		#{$_mod}__anim-wrapper {
-			top: -($_size - $_h)/2;
-			left: -($_size - $_w)/2;
-			@include size($_size);
-			background: $c-canvas;
-			@include rotate(-$_angle);
+    #{$_mod}__anim-wrapper {
+      top: -($_size - $_h)/2;
+      left: -($_size - $_w)/2;
+      @include size($_size);
+      background: $c-canvas;
+      @include rotate(-$_angle);
 
-			> .pie { background: $_bg; }
-			> .spinner { border-radius: $_size 0 0 $_size; }
-			> .filler { border-radius: 0 $_size $_size 0; }
-		}
-	}	
+      > .pie { background: $_bg; }
+      > .spinner { border-radius: $_size 0 0 $_size; }
+      > .filler { border-radius: 0 $_size $_size 0; }
+    }
+  }
 
-	@mixin createConnectionPoint($_symbol) {
-		@include size(100%);
-		padding: $v-cell-padding;
+  @mixin createConnectionPoint($_symbol) {
+    @include size(100%);
+    padding: $v-cell-padding;
 
-		span {
-			$_font-size: (1rem - (2 * $v-cell-padding));
+    span {
+      $_font-size: (1rem - (2 * $v-cell-padding));
 
-			transition: all .25s ease .1s;
-			position: relative;
-			@include size(100%);
-			border-radius: 50%;
-			font-family: "Ek Mukta";
-			@include f($_font-size, $c-white, 700, $_font-size);
-			text-align: center;
-			background: $c-black;
+      transition: all .25s ease .1s;
+      position: relative;
+      @include size(100%);
+      border-radius: 50%;
+      font-family: "Ek Mukta";
+      @include f($_font-size, $c-white, 700, $_font-size);
+      text-align: center;
+      background: $c-black;
 
-			&:after {
-				content: $_symbol;
-				position: absolute;
-				top: 0;
-				left: 0;
-				@include size(100%);
-			}
-		}
+      &:after {
+        content: $_symbol;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%);
+      }
+    }
 
-		&.is-connected span {
-			background: $c-white;
-			color: $c-black;
-		}
-	}
+    &.is-connected span {
+      background: $c-white;
+      color: $c-black;
+    }
+  }
 
-	@mixin buildMachine($_machine-number, $_width, $_height, $_bg: transparent, $_title-offset: 0) {
-		@include size($_width, $_height);
-		@include createTitle($_title-offset);
-		@include createInput($_machine-number, $_bg);
-		@include createOutput($_machine-number, $_bg);
-		@include createProduct($_machine-number, $_bg);
-		@include createAnimation($_width, $_height, $_bg);
-	}
-
-
-
-	// setup
-	position: absolute;
-	z-index: $z-index-machine;
-	display: inline-block;
-
-	span {
-		display: inline-block;
-		vertical-align: top;
-	}
-
-	&__body {
-		position: relative;
-		margin: -$_anim-size;
-		padding: $_anim-size;
-		font-size: 0;
-		overflow: hidden;
-	}
-
-	&__anim-wrapper {
-		position: absolute;
-		z-index: $_z-index-anim;
-		overflow: hidden;
-
-		> .pie {
-		  position: absolute;
-			@include size(50%,100%);
-		  @include transformOrigin(100% 50%);
-		}
-
-		> .spinner {
-			z-index: 2; // on top of the filler, behind the mask
-		}
-
-		> .filler {
-			z-index: 1;
-			left: 50%;
-			opacity: 0;
-		}
-
-		> .mask {
-		  position: absolute;
-		  z-index: 3;
-			@include size(50%,100%);
-		  opacity: 1;
-		  background: inherit;
-		}
-
-		@for $i from 1 through $v-animation-max-time {
-			&.is-animated-#{$i} {
-				> .spinner { @include animation(spin #{$i}s linear infinite); }
-				> .filler { @include animation(fill #{$i}s steps(1, end) infinite); }
-				> .mask { @include animation(mask #{$i}s steps(1, end) infinite); }
-			}
-		}
-	}
-
-	&__unit-wrapper {
-		position: relative;
-		z-index: $_z-index-units;
-	}
-
-	&__unit {
-		@include size(1rem);
-		outline: 1px solid $c-border;
-		background: lighten($c-blue,20%);
-	}
-
-	&__input {
-		@include createConnectionPoint("-");
-	}
-
-	&__output {
-		@include createConnectionPoint("+");
-	}
-
-	&__product {
-		position: relative;
-		display: inline-block;
-		@include size(100%);
-
-		&:after {
-			content: "";
-			position: absolute;
-			top: $v-cell-padding;
-			left: $v-cell-padding;
-			@include size((1rem - 2*$v-cell-padding));
-			@include rotate(45deg);
-		}
-	}
+  @mixin buildMachine($_machine-number, $_width, $_height, $_bg: transparent, $_title-offset: 0) {
+    @include size($_width, $_height);
+    @include createTitle($_title-offset);
+    @include createInput($_machine-number, $_bg);
+    @include createOutput($_machine-number, $_bg);
+    @include createProduct($_machine-number, $_bg);
+    @include createAnimation($_width, $_height, $_bg);
+  }
 
 
 
-	// machines
-	&--1 {
-		@include buildMachine(1, 2rem, 2rem, $c-asphalt);
-	}
+  // setup
+  position: absolute;
+  z-index: $z-index-machine;
+  display: inline-block;
 
-	&--2 {
-		@include buildMachine(2, 5rem, 3rem, $c-green, 2rem);
-	}
+  span {
+    display: inline-block;
+    vertical-align: top;
+  }
 
-	&--3 {
-		@include buildMachine(3, 2rem, 2rem, $c-orange);
-	}
+  &__body {
+    position: relative;
+    margin: -$_anim-size;
+    padding: $_anim-size;
+    font-size: 0;
+    overflow: hidden;
+  }
 
-	&--4 {
-		@include buildMachine(4, 2rem, 2rem, $c-red);
-	}
+  &__anim-wrapper {
+    position: absolute;
+    z-index: $_z-index-anim;
+    overflow: hidden;
 
-	&--5 {
-		@include buildMachine(5, 5rem, 3rem, $c-purple, 2rem);
-	}
+    > .pie {
+      position: absolute;
+      @include size(50%,100%);
+      @include transformOrigin(100% 50%);
+    }
 
-	&--6 {
-		@include buildMachine(6, 3rem, 5rem);
-	}
+    > .spinner {
+      z-index: 2; // on top of the filler, behind the mask
+    }
+
+    > .filler {
+      z-index: 1;
+      left: 50%;
+      opacity: 0;
+    }
+
+    > .mask {
+      position: absolute;
+      z-index: 3;
+      @include size(50%,100%);
+      opacity: 1;
+      background: inherit;
+    }
+
+    @for $i from 1 through $v-animation-max-time {
+      &.is-animated-#{$i} {
+        > .spinner { @include animation(spin #{$i}s linear infinite); }
+        > .filler { @include animation(fill #{$i}s steps(1, end) infinite); }
+        > .mask { @include animation(mask #{$i}s steps(1, end) infinite); }
+      }
+    }
+  }
+
+  &__unit-wrapper {
+    position: relative;
+    z-index: $_z-index-units;
+  }
+
+  &__unit {
+    @include size(1rem);
+    outline: 1px solid $c-border;
+    background: lighten($c-blue,20%);
+  }
+
+  &__input {
+    @include createConnectionPoint("-");
+  }
+
+  &__output {
+    @include createConnectionPoint("+");
+  }
+
+  &__product {
+    position: relative;
+    display: inline-block;
+    @include size(100%);
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: $v-cell-padding;
+      left: $v-cell-padding;
+      @include size((1rem - 2*$v-cell-padding));
+      @include rotate(45deg);
+    }
+  }
+
+
+
+  // machines
+  &--1 {
+    @include buildMachine(1, 2rem, 2rem, $c-asphalt);
+  }
+
+  &--2 {
+    @include buildMachine(2, 5rem, 3rem, $c-green, 2rem);
+  }
+
+  &--3 {
+    @include buildMachine(3, 2rem, 2rem, $c-orange);
+  }
+
+  &--4 {
+    @include buildMachine(4, 2rem, 2rem, $c-red);
+  }
+
+  &--5 {
+    @include buildMachine(5, 5rem, 3rem, $c-purple, 2rem);
+  }
+
+  &--6 {
+    @include buildMachine(6, 3rem, 5rem);
+  }
 }

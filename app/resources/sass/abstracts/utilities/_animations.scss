@@ -2,7 +2,7 @@
 
 
 @mixin keyframes($animation-name) {
-	@-webkit-keyframes #{$animation-name} {
+  @-webkit-keyframes #{$animation-name} {
     @content;
   }
   @-moz-keyframes #{$animation-name} {

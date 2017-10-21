@@ -3,12 +3,12 @@
 
 // aligns children vertically and horizontally
 @mixin flexAlign($vertical: center, $horizontal: center) {
-	display: flex;
+  display: flex;
 
-	@if $vertical != 0 {
-		align-items: $vertical;
-	}
-	@if $horizontal != 0 {
-		justify-content: $horizontal;
-	}
+  @if $vertical != 0 {
+    align-items: $vertical;
+  }
+  @if $horizontal != 0 {
+    justify-content: $horizontal;
+  }
 }
